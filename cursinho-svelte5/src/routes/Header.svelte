@@ -1,5 +1,5 @@
 <script>
-    let { name } = $props();
+    let { name = null } = $props();
 </script>
 
 <h1>{name} manda olá!</h1>
