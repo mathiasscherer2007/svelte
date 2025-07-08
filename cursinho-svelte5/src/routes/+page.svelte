@@ -1,39 +1,33 @@
-<script lang="ts">
-    import Header from "./Header.svelte";
+<!-- JS -->
+<script>
+	import Header from './Header.svelte';
 
-    let formState = $state({
-        name: "",
-        birthday: "",
-        step: 0,
-        error: ""
-    });
+	let name = $state('xerer');
+	let flag = false;
+
+	let fullName = $derived('Sr. ' + name);
 </script>
 
-<main>
-    <Header name={formState.name} />
-    
-    {@render formStep({question: "What's your name", id: "name", type: "text"})}
+<!-- HTML -->
+<Header {name} />
 
-    {#if formState.error}
-        <p class="error">{formState.error}</p>
-    {/if}
-</main>
+<input type="text" bind:value={name} />
 
-{#snippet formStep({ question, id, type }:{
-    question: string,
-    id: string,
-    type: string
-})}
-    <article>
-        <div>
-            <label for={id}>{question}</label>
-            <input {type} {id} bind:value={formState[id]}> // can ignore, it's just TypeScript bitching
-        </div>
-    </article>
-{/snippet}
+<button
+	type="button"
+	onclick={() => {
+		if (flag === false) {
+			name = name.toUpperCase();
+			flag = true;
+		} else {
+			name = name.toLowerCase();
+			flag = false;
+		}
+	}}>Click me!</button
+>
 
+<p>{fullName}</p>
+
+<!-- CSS -->
 <style>
-    .error{
-        color: red;
-    }
 </style>

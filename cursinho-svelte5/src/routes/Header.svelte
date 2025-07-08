@@ -1,9 +1,21 @@
+<!-- JS -->
 <script>
-    let { name = null } = $props();
+    // Componentes começam com letra maiúscula
+    // Páginas começam com um +
+
+    let { name, fake_name = null } = $props()
 </script>
 
-<div>
-    <h1>
-        {name ? name : "User"}'s Form
-    </h1>
-</div>
+<!-- HTML -->
+<h1>Hello { name }</h1>
+
+<!-- CSS -->
+ <style>
+    h1 {
+        color: red;
+    }
+
+    *::before {
+        content: "> ";
+    }
+ </style>
