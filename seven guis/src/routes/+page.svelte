@@ -10,6 +10,7 @@
     <ol>
         <li><a href="./Counter">Counter</a></li>
         <li><a href="./TempConverter">Temperature Converter</a></li>
+        <li><a href="./FlightBooker">Flight Booker</a></li>
     </ol>
 </div>
 
