@@ -8,6 +8,12 @@
 		step: 0,
 		error: ""
 	});
+
+	const QUESTIONS = [
+		{
+			
+		}
+	]
 </script>
 
 <!-- HTML -->
