@@ -82,7 +82,6 @@ const temp = new Temperature();
     }
 
     .center {
-        background-color: rgb(28, 24, 24);
         border: 1px solid orangered;
         padding: 20px;
         border-radius: 10px;
